@@ -2,6 +2,9 @@ import compose from 'next-compose-plugins';
 
 import analyzer from '@next/bundle-analyzer';
 import pwa from 'next-pwa';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const withBundleAnalyzer = analyzer({
   enabled: process.env.ANALYZE === 'true',
